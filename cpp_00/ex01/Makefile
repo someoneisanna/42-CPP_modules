@@ -3,7 +3,9 @@
 NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = phonebook.cpp
+SRCS = srcs/phonebook.cpp \
+		srcs/contact.cpp \
+		srcs/main.cpp
 
 # ---------------------------------- RULES -------------------------------------
 
@@ -12,7 +14,7 @@ SRCS = phonebook.cpp
 all: $(NAME)
 
 $(NAME): $(SRCS)
-	@$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME) -I.
 
 clean:
 	rm -f $(NAME)

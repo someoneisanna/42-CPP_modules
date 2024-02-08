@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_5.cpp                                         :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 10:19:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/07 10:29:11 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/02 09:29:37 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/08 14:18:46 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-// Here we learn how to use the goto statement in C++.
+#include "../header.hpp"
 
-int main()
+class Phonebook
 {
-	int x{};
-	tryAgain:
-		std::cout << "Enter a number between 1 and 5: ";
-		std::cin >> x;
-	if (x < 1 || x > 5)
-		goto tryAgain;
-	std::cout << "You entered " << x << std::endl;
-}
+	private:
+		Contact	_contacts[8];
+		int		_index;
+	public:
+		Phonebook() { _index = 0; };
+		~Phonebook() {};
+		void	add_contact();
+		void	search_contact();
+};
 
+#endif

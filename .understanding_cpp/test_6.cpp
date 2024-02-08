@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   test_6.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 09:29:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/02 19:49:00 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/07 15:43:40 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/07 15:45:02 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
 
-# include <iostream>
+// Here we learn how to use classes in C++ with public members.
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define PURPLE	"\033[0;95m"
-#define RESET	"\033[0m"
-
-class Contact
+class Dog
 {
 	public:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+	std::string name = "Billy";
+	std::string gender = "Male";
+	int age = 6;
 };
 
-class PhoneBook
+int main()
 {
-	public:
-		Contact	contacts[8];
-		int		n_contacts;
-};
+	Dog dogObj;
 
-#endif
+	std::cout << "Dog name is: " << dogObj.name << std::endl;
+	std::cout << "Dog gender is: " << dogObj.gender << std::endl;
+	std::cout << "Dog age is: " << dogObj.age << std::endl;
+
+	return 0;
+}

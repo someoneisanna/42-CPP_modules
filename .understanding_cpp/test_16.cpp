@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_5.cpp                                         :+:      :+:    :+:   */
+/*   test_16.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 10:19:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/07 10:29:11 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/07 19:08:37 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/07 19:11:20 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-// Here we learn how to use the goto statement in C++.
+// Destructors in C++
+
+class Example
+{
+	private:
+		int m_id;
+	public:
+		Example(int id): m_id {id} { std::cout << "Constructor: " << m_id << "\n"; }
+		~Example() { std::cout << "Destructor: " << m_id << "\n"; }
+		int getId() const { return m_id; }
+};
 
 int main()
 {
-	int x{};
-	tryAgain:
-		std::cout << "Enter a number between 1 and 5: ";
-		std::cin >> x;
-	if (x < 1 || x > 5)
-		goto tryAgain;
-	std::cout << "You entered " << x << std::endl;
+	Example e1 {1};
+	Example e2 {2};
+	return 0;
 }
-

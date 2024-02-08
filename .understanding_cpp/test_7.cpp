@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_5.cpp                                         :+:      :+:    :+:   */
+/*   test_7.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 10:19:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/07 10:29:11 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/07 15:44:48 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/07 15:55:01 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-// Here we learn how to use the goto statement in C++.
+// Here we learn how to use classes in C++ with private members.
+
+class Date
+{
+	private: // this is not necessary, as it is private by default
+		int m_day {07};
+		int m_month {02};
+		int m_year {2024};
+	public:
+		void print_date()
+		{
+			std::cout << m_day << "/" << m_month << "/" << m_year << std::endl;
+		}
+};
 
 int main()
 {
-	int x{};
-	tryAgain:
-		std::cout << "Enter a number between 1 and 5: ";
-		std::cin >> x;
-	if (x < 1 || x > 5)
-		goto tryAgain;
-	std::cout << "You entered " << x << std::endl;
+	Date d;
+	d.print_date();
+	return 0;
 }
-

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/anna/Desktop/42_projects/rank_4/42-CPP_modules/.understanding_cpp",
-      "program": "/home/anna/Desktop/42_projects/rank_4/42-CPP_modules/.understanding_cpp/build/Debug/outDebug",
+      "cwd": "${workspaceFolder}",
+      "program": "/home/anna/Desktop/42_projects/rank_4/42-CPP_modules/cpp_00/ex01/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
