@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:19:33 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/08 18:11:59 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/14 09:14:13 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.hpp"
+#include "Contact.hpp"
 
 std::string const Contact::getFirstName() { return _first_name; }
 std::string const Contact::getLastName() { return _last_name; }

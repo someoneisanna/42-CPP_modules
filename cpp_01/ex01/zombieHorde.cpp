@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 10:13:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:09:53 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/14 10:04:56 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/14 10:19:11 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "srcs/Contact.hpp"
-#include "srcs/Phonebook.hpp"
+Zombie *zombieHorde(int N, std::string name)
+{
+	Zombie *z = new Zombie[N];
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define YELLOW	"\033[0;93m"
-#define PURPLE	"\033[0;95m"
-#define BOLD	"\033[1m"
-#define RESET	"\033[0m"
-
-#endif
+	for (int i = 0; i < N; i++)
+		z[i].setName(name);
+	return (z);
+}

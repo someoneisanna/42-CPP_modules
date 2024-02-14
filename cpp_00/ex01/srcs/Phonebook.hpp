@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 10:13:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:09:53 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/02 09:29:37 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/14 09:12:41 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "srcs/Contact.hpp"
-#include "srcs/Phonebook.hpp"
+#include "../header.hpp"
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define YELLOW	"\033[0;93m"
-#define PURPLE	"\033[0;95m"
-#define BOLD	"\033[1m"
-#define RESET	"\033[0m"
+class Phonebook
+{
+	private:
+		Contact	_contacts[8];
+		int		_index;
+	public:
+		Phonebook();
+		~Phonebook();
+		void	add_contact();
+		void	search_contact();
+};
 
 #endif

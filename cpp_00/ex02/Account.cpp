@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:47:36 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/09 13:45:29 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/14 09:19:58 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 		std::cout << "withdrawal:refused" << std::endl;
 		return false;
 	}
-	
+
 	_amount -= withdrawal;
 	_totalAmount -= withdrawal;
 	_nbWithdrawals++;
@@ -96,13 +96,12 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 void	Account::_displayTimestamp(void)
 {
-	std::cout << "[19920104_091532] ";
-	/*std::time_t	t = std::time(0);
+	std::time_t	t = std::time(0);
 	std::tm*	now = std::localtime(&t);
 	char		buffer[100];
 
 	std::strftime(buffer, 100, "[%Y%m%d_%H%M%S] ", now);
-	std::cout << buffer;*/
+	std::cout << buffer;
 }
 
 void	Account::displayAccountsInfos(void)

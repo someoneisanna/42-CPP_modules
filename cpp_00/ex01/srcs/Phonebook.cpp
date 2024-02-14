@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:02:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/08 18:14:28 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/14 09:13:57 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int			check_index(int index);
 std::string word_cutter(std::string word);
 
 // CLASS FUNCTIONS -------------------------------------------------------------------------------
+
+Phonebook::Phonebook() { _index = 0; }
+Phonebook::~Phonebook() {}
 
 void Phonebook::add_contact()
 {

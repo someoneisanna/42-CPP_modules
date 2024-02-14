@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 10:13:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:09:53 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/14 10:33:51 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/14 16:12:09 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "srcs/Contact.hpp"
-#include "srcs/Phonebook.hpp"
+#include "Weapon.hpp"
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define YELLOW	"\033[0;93m"
-#define PURPLE	"\033[0;95m"
-#define BOLD	"\033[1m"
-#define RESET	"\033[0m"
+class HumanA
+{
+	private:
+		std::string	_name;
+		Weapon		&_weapon;
+
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
+		void attack(void);
+};
 
 #endif

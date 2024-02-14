@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 10:13:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:09:53 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/14 09:24:11 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/14 09:46:27 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "srcs/Contact.hpp"
-#include "srcs/Phonebook.hpp"
+int main(void)
+{
+	Zombie *z1;
+	Zombie *z2;
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define YELLOW	"\033[0;93m"
-#define PURPLE	"\033[0;95m"
-#define BOLD	"\033[1m"
-#define RESET	"\033[0m"
+	z1 = newZombie("Zombie 1");
+	z1->announce();
+	delete z1;
 
-#endif
+	randomChump("Zombie 2");
+
+	z2 = newZombie("Zombie 3");
+	z2->announce();
+	delete z2;
+
+	return (0);
+}

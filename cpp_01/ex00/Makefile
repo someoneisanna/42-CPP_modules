@@ -1,11 +1,12 @@
 # -------------------------------- VARIABLES -----------------------------------
 
-NAME = phonebook
+NAME = zombie
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = srcs/Phonebook.cpp \
-		srcs/Contact.cpp \
-		srcs/main.cpp
+SRCS = main.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp
 
 # ---------------------------------- RULES -------------------------------------
 

@@ -1,11 +1,9 @@
 # -------------------------------- VARIABLES -----------------------------------
 
-NAME = phonebook
+NAME = replacer
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = srcs/Phonebook.cpp \
-		srcs/Contact.cpp \
-		srcs/main.cpp
+SRCS = main.cpp
 
 # ---------------------------------- RULES -------------------------------------
 

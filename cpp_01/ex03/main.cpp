@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 10:13:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:09:53 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/14 10:32:42 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/14 16:10:37 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "srcs/Contact.hpp"
-#include "srcs/Phonebook.hpp"
+int main(void)
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define YELLOW	"\033[0;93m"
-#define PURPLE	"\033[0;95m"
-#define BOLD	"\033[1m"
-#define RESET	"\033[0m"
-
-#endif
+	}
+}

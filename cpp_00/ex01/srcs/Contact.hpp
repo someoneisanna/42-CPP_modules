@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:12:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/08 16:47:43 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/14 09:10:32 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.hpp"
+
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 class Contact
 {
@@ -33,3 +36,5 @@ class Contact
 						std::string &darkest_secret);
 		void displayContact();
 };
+
+#endif

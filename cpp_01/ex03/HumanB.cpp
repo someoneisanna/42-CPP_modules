@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 10:13:37 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:09:53 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/14 15:31:55 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/14 16:03:48 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "srcs/Contact.hpp"
-#include "srcs/Phonebook.hpp"
+HumanB::HumanB(std::string name): _name(name) {}
 
-#define RED		"\033[0;91m"
-#define GREEN	"\033[0;92m"
-#define YELLOW	"\033[0;93m"
-#define PURPLE	"\033[0;95m"
-#define BOLD	"\033[1m"
-#define RESET	"\033[0m"
+HumanB::~HumanB(void) {}
 
-#endif
+void HumanB::setWeapon(Weapon &weapon)
+{
+	_weapon = &weapon;
+}
+
+void HumanB::attack(void)
+{
+	if (_weapon != NULL)
+		std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+	else
+		std::cout << _name << " has no weapon to attack with" << std::endl;
+}
