@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:40:50 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 18:43:04 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:44:39 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 // ------------- COLORS -------------
 
-#define RESET		"\033[0m"
-#define BOLD		"\033[1m"
-#define RED			"\033[31m"
-#define GREEN		"\033[32m"
-#define YELLOW		"\033[33m"
-#define CYAN		"\033[36m"
+# define RESET		"\033[0m"
+# define BOLD		"\033[1m"
+# define RED			"\033[31m"
+# define GREEN		"\033[32m"
+# define YELLOW		"\033[33m"
+# define CYAN		"\033[36m"
 
 // ----------------------------------
 

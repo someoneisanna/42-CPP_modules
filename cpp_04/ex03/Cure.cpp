@@ -6,14 +6,14 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:13:48 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/20 11:46:17 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:44:41 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-#define YELLOW "\033[33m"
-#define RESET "\033[0m"
+# define YELLOW "\033[33m"
+# define RESET "\033[0m"
 
 // CONSTRUCTORS, DESTRUCTOR AND ASSIGNMENT OPERATOR OVERLOAD -------------------
 

@@ -6,14 +6,14 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:14:39 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/20 11:46:31 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:44:42 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-#define BLUE "\033[34m"
-#define RESET "\033[0m"
+# define BLUE "\033[34m"
+# define RESET "\033[0m"
 
 // CONSTRUCTORS, DESTRUCTOR AND ASSIGNMENT OPERATOR OVERLOAD -------------------
 

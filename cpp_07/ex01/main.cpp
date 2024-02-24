@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:35:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 18:22:15 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/24 10:14:18 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#include "iter.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-
-class Brain
+int main()
 {
-	private:
-		std::string _ideas[100];
-	public:
-		Brain(void);
-		Brain(Brain const &src);
-		~Brain(void);
-
-		Brain &operator=(Brain const &src);
-};
-
-#endif
+	return 0;
+}

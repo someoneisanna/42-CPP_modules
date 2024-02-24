@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:16:46 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/20 15:47:15 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:44:43 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 
-#define BOLD "\033[1m"
-#define RESET "\033[0m"
+# define BOLD "\033[1m"
+# define RESET "\033[0m"
 
 void header()
 {
@@ -42,7 +42,6 @@ void ask_for_input()
 	else
 		header();
 }
-
 
 int main(void)
 {

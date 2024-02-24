@@ -6,16 +6,16 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:35:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 15:43:14 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/24 18:22:14 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-# include <iostream>
-# include <string>
-# include <cstdlib>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
 class Brain
 {
