@@ -105,6 +105,8 @@
     "ctime": "cpp",
     "fstream": "cpp",
     "iomanip": "cpp",
-    "sstream": "cpp"
+    "sstream": "cpp",
+    "array.hpp": "c",
+    "*.tpp": "c"
   }
 }
