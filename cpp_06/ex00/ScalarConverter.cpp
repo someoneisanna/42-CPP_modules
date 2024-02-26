@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 09:24:49 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/25 17:58:46 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/26 08:00:37 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@ static void printChar(long double n);
 static void printInt(long double n);
 static void printFloat(long double n);
 static void printDouble(long double n);
+
+// Constructor, Destructor, Assignment Operator --------------------------------
+
+ScalarConverter::ScalarConverter() {}
+ScalarConverter::~ScalarConverter() {}
+ScalarConverter::ScalarConverter(ScalarConverter const &src) { *this = src; }
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &src)
+{
+	(void)src;
+	return (*this);
+}
 
 // Convert Function ------------------------------------------------------------
 

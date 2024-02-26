@@ -1,10 +1,10 @@
 # -------------------------------- VARIABLES -----------------------------------
 
-NAME = 
+NAME = real_type
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = main.cpp \
-
+		Base.cpp
 
 # ---------------------------------- RULES -------------------------------------
 
