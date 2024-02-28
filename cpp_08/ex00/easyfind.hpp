@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 10:19:36 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 10:19:48 by ataboada         ###   ########.fr       */
+/*   Created: 2024/02/27 09:58:35 by ataboada          #+#    #+#             */
+/*   Updated: 2024/02/27 11:13:55 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,20 @@
 # define EASYFIND_HPP
 
 #include <iostream>
-#include <string>
+#include <algorithm> // std::find
+#include <vector>    // std::vector
+#include <list>      // std::list
 
+template <typename T>
+int easyfind(T &container, int value)
+{
+	typename T::iterator ptr;
 
+	ptr = std::find(container.begin(), container.end(), value);
+	if (ptr == container.end())
+		throw std::exception();
+	std::cout << "Value found" << std::endl;
+	return (*ptr);
+}
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 09:24:49 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/26 08:00:37 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/02/28 16:24:34 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ bool ScalarConverter::isInt(std::string input)
 
 bool ScalarConverter::isFloat(std::string input)
 {
-	int point_found = 0;
+	int dot_found = 0;
 	for (size_t i = 0; i < input.length(); i++)
 	{
 		if (input[i] == '.')
-			point_found++;
+			dot_found++;
 		else if (i == 0 && (input[i] == '+' || input[i] == '-'))
 			;
 		else if (i == input.length() - 1 && input[i] == 'f')
@@ -85,22 +85,22 @@ bool ScalarConverter::isFloat(std::string input)
 		else if (!isdigit(input[i]))
 			return (false);
 	}
-	if (point_found > 1 || input[input.length() - 1] != 'f')
+	if (dot_found > 1 || input[input.length() - 1] != 'f')
 		return (false);
 	return (true);
 }
 
 bool ScalarConverter::isDouble(std::string input)
 {
-	int point_found = 0;
+	int dot_found = 0;
 	for (size_t i = 0; i < input.length(); i++)
 	{
 		if (input[i] == '.')
-			point_found++;
+			dot_found++;
 		else if (!isdigit(input[i]) && (i != 0 || (input[0] != '+' && input[0] != '-')))
 			return (false);
 	}
-	if (point_found == 0 || point_found > 1)
+	if (dot_found == 0 || dot_found > 1)
 		return (false);
 	return (true);
 }
