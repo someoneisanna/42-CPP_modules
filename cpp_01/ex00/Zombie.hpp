@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 09:23:30 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 10:23:03 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:37:19 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ class Zombie
 {
 	private:
 		std::string _name;
+
 	public:
 		Zombie(std::string name);
 		~Zombie();
+		
 		void announce(void);
 };
 

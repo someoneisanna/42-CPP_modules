@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:00:14 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 18:28:08 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:25:23 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ Fixed::Fixed(const float n)
 	this->_rawBits = roundf(n * (1 << this->_fraBits));
 }
 
+// Member Functions ------------------------------------------------------------
+
 float	Fixed::toFloat(void) const
 {
 	return ((float)this->_rawBits / (1 << this->_fraBits));
@@ -72,6 +74,8 @@ int		Fixed::toInt(void) const
 {
 	return (this->_rawBits >> this->_fraBits);
 }
+
+// Operator Overloads ----------------------------------------------------------
 
 std::ostream &operator<<(std::ostream &out, Fixed const &src)
 {

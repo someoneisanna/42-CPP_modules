@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:41:58 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 18:42:42 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/18 19:00:33 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void menu(void)
 	std::cout << "*                   HARL'S COMPLAINTS                   *\n";
 	std::cout << "*********************************************************\n" << RESET;
 	std::cout << "Complaint Levels:" << std::endl;
-	std::cout << "[] DEBUG" << std::endl;
-	std::cout << "[] INFO" << std::endl;
-	std::cout << "[] WARNING" << std::endl;
-	std::cout << "[] ERROR" << std::endl;
+	std::cout << "* DEBUG" << std::endl;
+	std::cout << "* INFO" << std::endl;
+	std::cout << "* WARNING" << std::endl;
+	std::cout << "* ERROR" << std::endl;
 	std::cout << CYAN << "*********************************************************\n" << RESET;
 
 }

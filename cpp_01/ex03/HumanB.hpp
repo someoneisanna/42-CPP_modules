@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:30:13 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 16:11:57 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:52:03 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class HumanB
 	public:
 		HumanB(std::string name);
 		~HumanB(void);
+		
 		void setWeapon(Weapon &weapon);
 		void attack(void);
 };

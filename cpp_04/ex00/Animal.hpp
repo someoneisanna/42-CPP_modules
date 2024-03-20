@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:25:47 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 14:48:51 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:30:48 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Animal
 {
 	protected:
 		std::string _type;
+
 	public:
 		Animal(void);
 		Animal(std::string type);

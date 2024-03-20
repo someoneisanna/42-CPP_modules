@@ -6,17 +6,21 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:19:33 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:14:13 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:13:25 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+// Getter Functions ------------------------------------------------------------
 
 std::string const Contact::getFirstName() { return _first_name; }
 std::string const Contact::getLastName() { return _last_name; }
 std::string const Contact::getNickname() { return _nickname; }
 std::string const Contact::getPhoneNumber() { return _phone_number; }
 std::string const Contact::getDarkestSecret() { return _darkest_secret; }
+
+// Setter Functions ------------------------------------------------------------
 
 void Contact::setContact(std::string &first_name,
 						std::string &last_name,
@@ -30,6 +34,8 @@ void Contact::setContact(std::string &first_name,
 	_phone_number = phone_number;
 	_darkest_secret = darkest_secret;
 }
+
+// Member Functions ------------------------------------------------------------
 
 void Contact::displayContact()
 {
