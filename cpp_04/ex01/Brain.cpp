@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:35:50 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 16:04:47 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:16:17 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,18 @@ Brain &Brain::operator=(Brain const &src)
 			this->_ideas[i] = src._ideas[i];
 	}
 	return (*this);
+}
+
+// GETTERS ---------------------------------------------------------------------
+
+void Brain::getIdeas(void) const
+{
+	std::cout << "Brain Ideas: ";
+	int i = 0;
+	for (i = 0; i < 100; i++)
+	{
+		std::cout << this->_ideas[i];
+		if (i < 99)
+			std::cout << ", ";
+	}
 }

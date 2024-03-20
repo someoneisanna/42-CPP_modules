@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:24:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 16:49:09 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:30:14 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(void)
 
 	// First Test --------------------------------------------------------------
 	{
-		// AAnimal a; // This shouldn't compile because AAnimal is an abstract class and we can't create an instance of it.
+		//AAnimal a; // This shouldn't compile because AAnimal is an abstract class and we can't create an instance of it.
 
 		AAnimal *a = new Dog();
 		AAnimal *b = new Cat();

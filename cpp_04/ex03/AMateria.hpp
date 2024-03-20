@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:58:20 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/20 11:39:44 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:32:39 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class AMateria
 {
 	protected:
 		std::string _type;
+
 	public:
 		AMateria(void);
 		AMateria(std::string const &type);

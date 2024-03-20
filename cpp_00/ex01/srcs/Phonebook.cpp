@@ -6,19 +6,18 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:02:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:13:57 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:16:16 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-int			check_index(int index);
-std::string word_cutter(std::string word);
+// Constructor and Destructor --------------------------------------------------
 
-// CLASS FUNCTIONS -------------------------------------------------------------------------------
-
-Phonebook::Phonebook() { _index = 0; }
+Phonebook::Phonebook() : _index(0) {}
 Phonebook::~Phonebook() {}
+
+// Member Functions ------------------------------------------------------------
 
 void Phonebook::add_contact()
 {
@@ -81,7 +80,7 @@ void Phonebook::search_contact()
 	std::cout << GREEN << "************* CONTACT DISPLAYED *************" << RESET << std::endl;
 }
 
-// HELPER FUNCTIONS ----------------------------------------------------------------------------
+// Helper Functions ------------------------------------------------------------
 
 int	check_index(int index)
 {

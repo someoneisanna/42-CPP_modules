@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:01:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/20 15:44:21 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:36:49 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Character : public ICharacter
 		AMateria			*_adresses[4];
 		int					_inventoryCount;
 		std::string			_name;
+
 	public:
 		Character(void);
 		Character(std::string const &name);

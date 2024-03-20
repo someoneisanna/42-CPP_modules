@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:30:08 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 16:40:53 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:27:16 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class Dog : public AAnimal
 	public:
 		Dog(void);
 		Dog(Dog const &src);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		Dog &operator=(Dog const &src);
+
+		Brain *getBrain(void) const;
 
 		virtual void makeSound(void) const;
 };

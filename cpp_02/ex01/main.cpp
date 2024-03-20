@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:59:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 14:28:13 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:23:51 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 	Fixed const	c( 42.42f ); // calls float constructor
 	Fixed const	d( b ); // calls copy constructor
 
-	a = Fixed( 1234.4321f ); // calls float constructor and assignment operator
+	//a = Fixed( 1234.4321f ); // calls float constructor and assignment operator
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;

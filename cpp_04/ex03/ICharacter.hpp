@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:00:45 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/20 11:36:30 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:34:42 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class AMateria;
 class ICharacter
 {
 	public:
-		ICharacter() {};
 		virtual ~ICharacter() {};
 
 		virtual std::string const &getName() const = 0;

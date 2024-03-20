@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:35:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 15:40:18 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:15:46 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,18 @@ Dog &Dog::operator=(Dog const &src)
 	if (this != &src)
 	{
 		this->_type = src._type;
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain(*src._brain);
 	}
 	return (*this);
+}
+
+// GETTERS ---------------------------------------------------------------------
+
+Brain *Dog::getBrain(void) const
+{
+	return (this->_brain);
 }
 
 // MEMBER FUNCTION -------------------------------------------------------------

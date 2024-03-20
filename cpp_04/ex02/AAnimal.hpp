@@ -32,6 +32,7 @@ class AAnimal
 {
 	protected:
 		std::string _type;
+
 	public:
 		AAnimal(void);
 		AAnimal(std::string type);

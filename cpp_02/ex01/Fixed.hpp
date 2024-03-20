@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:58:25 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 18:27:54 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:19:15 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ class Fixed
 		~Fixed(void); 						// Destructor
 
 		Fixed &operator=(const Fixed &src); // Assignment operator
-		
+
 		Fixed(const int n);					// Int constructor
 		Fixed(const float n);				// Float constructor
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+
 		float	toFloat(void) const;
 		int		toInt(void) const;
 

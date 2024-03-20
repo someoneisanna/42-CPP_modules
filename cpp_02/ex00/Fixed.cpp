@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:17:41 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 10:45:26 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:18:43 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,21 @@ Fixed &Fixed::operator=(const Fixed &src)
 	return (*this);
 }
 
+// The destructor is called when an object is destroyed (either by going out of
+// scope, or by being explicitly deleted).
 Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
+// Member function that returns the value of the fixed point value.
 int		Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_rawBits);
 }
 
+// Member function that sets the value of the fixed point value.
 void	Fixed::setRawBits(int const raw)
 {
 	this->_rawBits = raw;

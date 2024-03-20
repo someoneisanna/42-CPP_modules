@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:35:38 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 15:39:24 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:16:09 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,20 @@ Cat &Cat::operator=(Cat const &src)
 {
 	std::cout << "Cat Assignment Operator Called" << std::endl;
 	if (this != &src)
+	{
 		this->_type = src._type;
+		if (this->_brain)
+			delete this->_brain;
+		this->_brain = new Brain(*src._brain);
+	}
 	return (*this);
+}
+
+// GETTERS ---------------------------------------------------------------------
+
+Brain *Cat::getBrain(void) const
+{
+	return (this->_brain);
 }
 
 // MEMBER FUNCTION -------------------------------------------------------------

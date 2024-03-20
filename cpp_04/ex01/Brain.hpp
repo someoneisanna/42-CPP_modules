@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:35:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 18:22:14 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:22:55 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ class Brain
 {
 	private:
 		std::string _ideas[100];
+
 	public:
 		Brain(void);
 		Brain(Brain const &src);
-		~Brain(void);
+		virtual ~Brain(void);
 
 		Brain &operator=(Brain const &src);
+
+		void getIdeas(void) const;
 };
 
 #endif

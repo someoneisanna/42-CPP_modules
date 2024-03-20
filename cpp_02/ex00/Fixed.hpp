@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:16:48 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 10:24:10 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:17:40 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Fixed
 	private:
 		int					_rawBits;
 		static const int	_fraBits = 8;
+
 	public:
 		Fixed(void); 						// Default constructor
 		Fixed(const Fixed &src); 			// Copy constructor

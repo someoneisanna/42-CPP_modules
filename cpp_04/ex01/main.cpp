@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:24:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 16:20:29 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:24:05 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,28 @@ int main(void)
 		e->makeSound();
 
 		delete d;
+	}
+	ask_for_input();
+
+	// Fourth Test -------------------------------------------------------------
+	{
+		Dog d1;
+		{
+			Dog d2 = d1;
+			std::cout << "D2 brain address: " << d2.getBrain() << std::endl;
+		}
+		std::cout << "D1 brain address: " << d1.getBrain() << std::endl;
+	}
+	ask_for_input();
+
+	// Fifth Test --------------------------------------------------------------
+	{
+		Dog d1;
+		Dog d2 = d1;
+		Dog d3(d1);
+
+		std::cout << "D1 brain address: " << d1.getBrain() << std::endl;
+		std::cout << "D2 brain address: " << d2.getBrain() << std::endl;
+		std::cout << "D3 brain address: " << d3.getBrain() << std::endl;
 	}
 }

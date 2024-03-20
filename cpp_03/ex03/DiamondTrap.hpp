@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:44:10 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/16 17:31:33 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:22:56 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string _name;
+
 	public:
 		DiamondTrap(void);
 		DiamondTrap(std::string name);

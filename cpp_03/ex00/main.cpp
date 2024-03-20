@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:56:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/16 12:16:26 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:12:26 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int main(void)
 
 	continue_message();
 	ClapTrap c3("T-1000");
-	c1.takeDamage(10);
-	c1.beRepaired(5);
-	c1.takeDamage(20);
-	c1.attack("rebels");
+	c3.takeDamage(10);
+	c3.beRepaired(5);
+	c3.takeDamage(20);
+	c3.attack("rebels");
 }

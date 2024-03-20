@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 19:47:36 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 09:19:58 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/03/18 18:32:57 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 void	Account::_displayTimestamp(void)
 {
+	//std::cout << "[19920104_091532] "; // This is so we can use diff
 	std::time_t	t = std::time(0);
 	std::tm*	now = std::localtime(&t);
 	char		buffer[100];
