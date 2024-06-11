@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 09:02:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/18 18:16:16 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:18:18 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void Phonebook::search_contact()
 	std::cout << "---------------------------------------------" << std::endl;
 	for (int i = 0; i < _index && i < 8; i++)
 	{
-		std::cout << "|         " << i
-		<< "|"
-		<< word_cutter(_contacts[i].getFirstName()) << "|"
-		<< word_cutter(_contacts[i].getLastName()) << "|"
-		<< word_cutter(_contacts[i].getNickname()) << "|" << std::endl;
+		std::cout
+		<< "|         " << i << "|"
+		<< std::setw(10) << word_cutter(_contacts[i].getFirstName()) << "|"
+		<< std::setw(10) << word_cutter(_contacts[i].getLastName()) << "|"
+		<< std::setw(10) << word_cutter(_contacts[i].getNickname()) << "|" << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << BOLD << "Enter the index of the contact you want to see: " << RESET;
@@ -107,14 +107,7 @@ int	check_index(int index)
 
 std::string word_cutter(std::string word)
 {
-	std::string result;
-
 	if (word.length() > 10)
 		return (word.substr(0, 9) + ".");
-	else
-	{
-		for (int i = 10 - word.length(); i > 0; i--)
-			result += " ";
-		return (result + word);
-	}
+	return (word);
 }
