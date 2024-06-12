@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:00:14 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 18:48:45 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:53:22 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	Fixed::setRawBits(int const raw) { this->_rawBits = raw; }
 
 float	Fixed::toFloat(void) const { return ((float)this->_rawBits / (1 << this->_fraBits)); }
 int		Fixed::toInt(void) const { return (this->_rawBits >> this->_fraBits); }
+
+
+// OVERLOADING OPERATORS - STREAM -----------------------------------------------------------------
 
 std::ostream &operator<<(std::ostream &out, Fixed const &src)
 {

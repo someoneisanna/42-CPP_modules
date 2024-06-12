@@ -6,12 +6,13 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:59:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/15 16:44:41 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:00:42 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+void menu();
 void tests_1();
 void tests_2(Fixed &a, Fixed &b, Fixed &c, Fixed &d);
 void tests_3(Fixed &a, Fixed &b, Fixed &c, Fixed &d);
@@ -27,15 +28,7 @@ int main(void)
 
 	system("clear");
 	std::string	choice;
-	std::cout << "******************************************\n";
-	std::cout << "*          OPERATOR OVERLOADING          *\n";
-	std::cout << "******************************************\n\n";
-	std::cout << "Possible tests for the Fixed class:\n\n";
-	std::cout << "1. Subject's main" << std::endl;
-	std::cout << "2. Comparison Operators" << std::endl;
-	std::cout << "3. Arithmetic Operators" << std::endl;
-	std::cout << "4. Increment and Decrement Operators" << std::endl;
-	std::cout << "5. Min and Max Functions" << "\n\n";
+	menu();
 	while (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5")
 	{
 		std::cout << "Choose a test: ";
@@ -51,6 +44,20 @@ int main(void)
 		tests_4(c, d);
 	else if (choice == "5")
 		tests_5(a, b, c, d);
+}
+
+void	menu()
+{
+	system("clear");
+	std::cout << "******************************************\n";
+	std::cout << "*          OPERATOR OVERLOADING          *\n";
+	std::cout << "******************************************\n\n";
+	std::cout << "Possible tests for the Fixed class:\n\n";
+	std::cout << "1. Subject's main" << std::endl;
+	std::cout << "2. Comparison Operators" << std::endl;
+	std::cout << "3. Arithmetic Operators" << std::endl;
+	std::cout << "4. Increment and Decrement Operators" << std::endl;
+	std::cout << "5. Min and Max Functions" << "\n\n";
 }
 
 void tests_1()

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:59:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 13:51:40 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:06:53 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main(void)
 	Point a(1, 5);
 	Point b(11, 17);
 	Point c(18, 5);
-
 
 	// This will print the x axis
 	for (int i = 0; i <= 20; ++i)
@@ -58,15 +57,15 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	int x;
-	int y;
+	float x = 0;
+	float y = 0;
 	std::string input;
 
 	std::cout << BOLD << "Choose a point to check if it's inside the triangle (x y): " << RESET;
 	std::cin >> x >> y;
+	std::cout << x << " " << y << std::endl;
 
 	Point p(x - 1, y);
-
 	if (bsp(a, b, c, p))
 		std::cout << GREEN << "\nThe point is inside the triangle." << RESET << "\n\n";
 	else

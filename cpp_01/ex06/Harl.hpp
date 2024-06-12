@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:44:10 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 16:44:40 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:25:34 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Harl
 		void info(void);
 		void warning(void);
 		void error(void);
+
 	public:
 		void complain(std::string level);
 };
