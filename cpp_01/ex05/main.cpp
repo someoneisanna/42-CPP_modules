@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:41:58 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/18 19:00:33 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:46:12 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(void)
 	{
 		system("clear");
 		menu();
-		std::cout << BOLD << "Please enter the level of your complaint: " << RESET;
+		std::cout << BOLD << "Please enter your complaint level: " << RESET;
 		std::getline(std::cin, level);
 		if (level == "DEBUG" || level == "INFO" || level == "WARNING" || level == "ERROR")
 		{

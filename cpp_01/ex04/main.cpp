@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:13:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/14 17:34:30 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/12 12:57:16 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,23 @@ std::string	replace(std::string line, std::string s1, std::string s2);
 int main(int ac, char **av)
 {
 	check_args(ac, av);
-
 	std::string s1 = av[2];
 	std::string s2 = av[3];
+	
 	std::ifstream old_file(av[1]);
 	if (!old_file.is_open())
 	{
 		std::cout << "Error: File not found or could not be opened" << std::endl;
 		return (1);
 	}
+	
 	std::ofstream new_file((av[1] + std::string (".replace")).c_str());
 	if (!new_file.is_open())
 	{
 		std::cout << "Error: File could not be created" << std::endl;
 		return (1);
 	}
-
+	
 	if (s1 == s2)
 		new_file << old_file.rdbuf();
 	else
@@ -57,13 +58,12 @@ int check_args(int ac, char **av)
 		std::cout << "Usage: ./replacer [filename] [str_to_replace] [str_to_insert]" << std::endl;
 		exit (1);
 	}
-
+	
 	std::string s1 = av[2];
 	std::string s2 = av[3];
-
 	if ((s1.length()) == 0 && s2.length() != 0)
 	{
-		std::cout << "Error: Empty strings are not allowed" << std::endl;
+		std::cout << "Error: You cannot replace an empty string" << std::endl;
 		exit (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:31:43 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/18 18:52:37 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:00:23 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ HumanA::~HumanA(void) {}
 
 void HumanA::attack(void)
 {
-	std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
+	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 09:24:11 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/18 18:42:06 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:12:46 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 int main(void)
 {
-	Zombie *z1;
-	Zombie *z2;
+	Zombie	*z2;
+	Zombie	*z3;
 
-	z1 = newZombie("Zombie 1");
-	z1->announce();
-	delete z1;
+	Zombie z1("Zombie 1");
+	z1.announce();
 
-	randomChump("Zombie 2");
-
-	z2 = newZombie("Zombie 3");
+	z2 = newZombie("Zombie 2");
 	z2->announce();
 	delete z2;
 
-	return (0);
+	randomChump("Zombie 3");
+
+	z3 = newZombie("Zombie 4");
+	z3->announce();
+	delete z3;
+
+	randomChump("Zombie 5");
 }
