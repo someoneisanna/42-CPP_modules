@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:56:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/16 14:40:42 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/17 16:03:01 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,35 +23,44 @@ void header(void)
 void continue_message(void)
 {
 	std::string input;
-	std::cout << "\nDo you want to see another FragTrap atack? (Y/N): ";
-	std::cin >> input;
+
+	while (input != "Y" && input != "N" && input != "y" && input != "n")
+	{
+		std::cout << "\nDo you want to see another FlagTrap atack? (Y/N): ";
+		std::cin >> input;
+	}
 	std::cout << std::endl;
-	if (input == "N")
+	if (input == "N" || input == "n")
 		exit(0);
-	else
+	else if (input != "Y" || input != "y")
 		header();
 }
 
 int main(void)
 {
 	header();
-	FragTrap c1("Skynet");
-	c1.attack("rebels");
-	c1.highFivesGuys();
-	c1.takeDamage(5);
-	c1.beRepaired(5);
-	c1.takeDamage(10);
-	c1.attack("rebels");
-
+	{
+		FragTrap c1("Skynet");
+		c1.printInfo();
+		c1.attack("rebels");
+		c1.highFivesGuys();
+		c1.takeDamage(5);
+		c1.beRepaired(5);
+		c1.takeDamage(10);
+		c1.attack("rebels");
+	}
 	continue_message();
-	FragTrap c2("T-800");
-	for (int i = 0; i < 11; i++)
-		c2.attack("rebels");
-
+	{
+		FragTrap c2("T-800");
+		for (int i = 0; i < 101; i++)
+			c2.attack("rebels");
+	}
 	continue_message();
-	FragTrap c3("T-1000");
-	c1.takeDamage(10);
-	c1.beRepaired(5);
-	c1.takeDamage(20);
-	c1.attack("rebels");
+	{
+		FragTrap c3("T-1000");
+		c3.takeDamage(99);
+		c3.beRepaired(5);
+		c3.takeDamage(20);
+		c3.attack("rebels");
+	}
 }

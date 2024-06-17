@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:56:53 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/16 12:57:50 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:01:11 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ class ClapTrap
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		
 		bool canPerformAction(void);
+		void printInfo(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:56:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 14:12:26 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:03:22 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,48 @@ void header(void)
 void continue_message(void)
 {
 	std::string input;
-	std::cout << "\nDo you want to see another ClapTrap atack? (Y/N): ";
-	std::cin >> input;
+
+	while (input != "Y" && input != "N" && input != "y" && input != "n")
+	{
+		std::cout << "\nDo you want to see another ClapTrap atack? (Y/N): ";
+		std::cin >> input;
+	}
 	std::cout << std::endl;
-	if (input == "N")
+	if (input == "N" || input == "n")
 		exit(0);
-	else
+	else if (input != "Y" || input != "y")
 		header();
 }
 
 int main(void)
 {
 	header();
-	ClapTrap c1("Skynet");
-	c1.attack("rebels");
-	c1.takeDamage(5);
-	c1.beRepaired(5);
-	c1.takeDamage(10);
-	c1.attack("rebels");
-
+	{
+		ClapTrap c1("Skynet");
+		c1.printInfo();
+		c1.attack("rebels");
+		c1.printInfo();
+		c1.takeDamage(5);
+		c1.printInfo();
+		c1.beRepaired(5);
+		c1.printInfo();
+		c1.takeDamage(10);
+		c1.printInfo();
+		c1.attack("rebels");
+		c1.printInfo();
+	}
 	continue_message();
-	ClapTrap c2("T-800");
-	for (int i = 0; i < 11; i++)
-		c2.attack("rebels");
-
+	{
+		ClapTrap c2("T-800");
+		for (int i = 0; i < 11; i++)
+			c2.attack("rebels");
+	}
 	continue_message();
-	ClapTrap c3("T-1000");
-	c3.takeDamage(10);
-	c3.beRepaired(5);
-	c3.takeDamage(20);
-	c3.attack("rebels");
+	{
+		ClapTrap c3("T-1000");
+		c3.takeDamage(10);
+		c3.beRepaired(5);
+		c3.takeDamage(20);
+		c3.attack("rebels");
+	}
 }

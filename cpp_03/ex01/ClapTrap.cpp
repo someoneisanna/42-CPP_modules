@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:56:42 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/16 15:51:20 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:06:18 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,12 @@ bool ClapTrap::canPerformAction(void)
 		return (false);
 	}
 	return (true);
+}
+
+void ClapTrap::printInfo(void)
+{
+	std::cout << "ScravTrap " << this->_name << " has " 
+		<< this->_hitPoints << " hit points, " 
+		<< this->_energyPoints << " energy points and "
+		<< this->_attackDamage << " attack damage!\n";
 }
