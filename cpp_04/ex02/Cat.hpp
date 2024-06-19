@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:30:18 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 16:27:12 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:26:44 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Cat : public AAnimal
 
 		Brain *getBrain(void) const;
 
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif

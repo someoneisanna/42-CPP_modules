@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:24:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 16:24:05 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:08:50 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,12 @@ int main(void)
 	{
 		const Animal *b = new Dog();
 		const Animal *c = new Cat();
+
+		std::cout << "Animal b says: ";
+		b->makeSound();
+		std::cout << "Animal c says: ";
+		c->makeSound();
+
 		delete b;
 		delete c;
 	}

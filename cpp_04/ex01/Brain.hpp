@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:35:28 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 16:22:55 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:19:04 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Brain
 	public:
 		Brain(void);
 		Brain(Brain const &src);
-		virtual ~Brain(void);
+		~Brain(void);
 
 		Brain &operator=(Brain const &src);
 

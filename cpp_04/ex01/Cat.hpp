@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:30:18 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 16:23:00 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:24:04 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class Cat : public Animal
 	public:
 		Cat(void);
 		Cat(Cat const &src);
-		virtual ~Cat(void);
+		virtual ~Cat(void);	// Virtual destructor is a good practice when dealing with polymorphism
 
 		Cat &operator=(Cat const &src);
 
 		Brain *getBrain(void) const;
 
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif

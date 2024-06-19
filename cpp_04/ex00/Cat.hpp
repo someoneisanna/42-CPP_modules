@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:30:18 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 14:58:31 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:26:08 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Cat : public Animal
 	public:
 		Cat(void);
 		Cat(Cat const &src);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		Cat &operator=(Cat const &src);
 
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif

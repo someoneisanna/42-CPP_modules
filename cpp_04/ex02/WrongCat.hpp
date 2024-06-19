@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:11:38 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 15:12:22 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:26:58 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongCat : public WrongAnimal
 	public:
 		WrongCat(void);
 		WrongCat(WrongCat const &src);
-		virtual ~WrongCat(void);
+		~WrongCat(void);
 
 		WrongCat &operator=(WrongCat const &rhs);
 

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:30:08 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 16:23:07 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 14:23:57 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ class Dog : public Animal
 	public:
 		Dog(void);
 		Dog(Dog const &src);
-		virtual ~Dog(void);
+		virtual ~Dog(void);	// Virtual destructor is a good practice when dealing with polymorphism
 
 		Dog &operator=(Dog const &src);
 
 		Brain *getBrain(void) const;
 
-		virtual void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif

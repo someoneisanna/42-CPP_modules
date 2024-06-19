@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:24:52 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/19 16:46:56 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:31:13 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ask_for_input(void)
 	std::string input;
 	while (input != "y" && input != "n")
 	{
-		std::cout << "Do you want to clear the console and continue? (y/n): ";
+		std::cout << "\nDo you want to clear the console and continue? (y/n): ";
 		std::cin >> input;
 	}
 	if (input == "n")
@@ -56,9 +56,10 @@ int main(void)
 
 	// Second Test -------------------------------------------------------------
 	{
-		Animal d = Animal();
-		Animal e = Dog();
-		Animal f = Cat();
+		// Object Slicing
+		Animal d = Animal();	// calls Animal Default Constructor
+		Animal e = Dog();		// calls Animal Default Constructor and Dog Default Constructor (Object Slicing) - Dog part is sliced off (hence the Dog Destructor being called)
+		Animal f = Cat();		// calls Animal Default Constructor and Cat Default Constructor (Object Slicing) - Cat part is sliced off (hence the Cat Destructor being called)
 
 		std::cout << "Type for d: " << d.getType() << std::endl;
 		std::cout << "Type for e: " << e.getType() << std::endl;
@@ -75,6 +76,33 @@ int main(void)
 
 	// Third Test --------------------------------------------------------------
 	{
+		// Polymorphism
+		Animal *d = new Animal();	// calls Animal Default Constructor
+		Animal *e = new Dog();		// calls Animal Default Constructor and Dog Default Constructor
+		Animal *f = new Cat();		// calls Animal Default Constructor and Cat Default Constructor
+
+		// here, differently than in the previous example, we create new Dog and Cat objects dinamically
+		// so they are not sliced off. The pointers are of type Animal, but they point to Dog and Cat objects. 
+		
+		std::cout << "Type for d: " << d->getType() << std::endl;
+		std::cout << "Type for e: " << e->getType() << std::endl;
+		std::cout << "Type for f: " << f->getType() << std::endl;
+
+		std::cout << "Sound from d: ";
+		d->makeSound();
+		std::cout << "Sound from e: ";
+		e->makeSound();
+		std::cout << "Sound from f: ";
+		f->makeSound();
+		
+		delete d;
+		delete e;
+		delete f;
+	}
+	ask_for_input();
+	
+	// Fourth Test -------------------------------------------------------------
+	{
 		Dog stack_g;
 		Cat stack_h;
 
@@ -88,7 +116,7 @@ int main(void)
 	}
 	ask_for_input();
 
-	// Fourth Test -------------------------------------------------------------
+	// Fifth Test --------------------------------------------------------------
 	{
 		Animal *heap_i = new Dog();
 		Animal *heap_j = new Cat();
@@ -106,7 +134,7 @@ int main(void)
 	}
 	ask_for_input();
 
-	// Fifth Test - WrongClass ------------------------------------------------
+	// Sixth Test - WrongClass -------------------------------------------------
 	{
 		WrongAnimal *k = new WrongAnimal();
 		WrongAnimal *l = new WrongCat();
@@ -121,5 +149,9 @@ int main(void)
 
 		delete k;
 		delete l;
+
+		// Here, we don't have polymorphism, because the makeSound() method is not
+		// virtual in the WrongAnimal class. So, the makeSound() method from the
+		// WrongAnimal class is called, even if the object is of type WrongCat.
 	}
 }

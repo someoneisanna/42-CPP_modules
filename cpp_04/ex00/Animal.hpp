@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 09:25:47 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/20 14:30:48 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/06/19 13:47:59 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ class Animal
 		std::string		getType(void) const;
 		virtual void	makeSound(void) const;
 };
+
+// obs.: When using polymorphism, it is recommended to make the destructor virtual
+// so that the destructor of the derived class is called when deleting a base class pointer.
 
 #endif
