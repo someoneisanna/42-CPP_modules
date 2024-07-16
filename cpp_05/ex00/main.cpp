@@ -6,15 +6,11 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:58:47 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 12:21:53 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:06:56 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-# define BOLD "\033[1m"
-# define RESET "\033[0m"
-# define RED "\033[1;31m"
 
 void header()
 {
@@ -109,6 +105,8 @@ int main()
 			b5.incrementGrade();
 			std::cout << b5;
 			b5.incrementGrade();
+			std::cout << b5;
+			b5.decrementGrade();
 			std::cout << b5;
 		}
 		catch(const std::exception& e)

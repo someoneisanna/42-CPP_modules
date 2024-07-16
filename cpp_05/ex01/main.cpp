@@ -6,15 +6,11 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:58:47 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 13:51:16 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:38:24 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-# define BOLD "\033[1m"
-# define RESET "\033[0m"
-# define RED "\033[1;31m"
 
 void header()
 {

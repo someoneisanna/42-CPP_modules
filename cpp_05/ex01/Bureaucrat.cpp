@@ -6,22 +6,19 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:27:57 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 14:04:49 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:57:44 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-# define RESET	"\033[0m"
-# define GREEN	"\033[32m"
-# define PINK	"\033[38;5;206m"
-# define ORANGE	"\033[38;2;255;165;0m"
-
 // Constructors, Destructor & Assignment Overload ------------------------------
 
-Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(150) {}
+Bureaucrat::Bureaucrat(void) : _name("Default"),
+								_grade(150) {}
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name),
+														_grade(grade)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -31,7 +28,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 		this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name), _grade(src._grade) {}
+Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name),
+												_grade(src._grade) {}
 
 Bureaucrat::~Bureaucrat(void) {}
 

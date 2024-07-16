@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:27:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 11:55:33 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 13:58:33 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
+# define BOLD	"\033[1m"
+# define RESET	"\033[0m"
+# define RED	"\033[1;31m"
 
 class Bureaucrat
 {

@@ -14,10 +14,15 @@
 
 // Constructors, Destructor & Assignment Overload ------------------------------
 
-AForm::AForm(void) : _name("AForm"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {}
+AForm::AForm(void) : _name("AForm"),
+						_signed(false),
+						_gradeToSign(150),
+						_gradeToExecute(150) {}
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
-	_signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+																		_signed(false),
+																		_gradeToSign(gradeToSign),
+																		_gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
@@ -25,8 +30,10 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 		throw AForm::GradeTooLowException();
 }
 
-AForm::AForm(AForm const &copy) : _name(copy._name), _signed(copy._signed),
-	_gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute) {}
+AForm::AForm(AForm const &copy) : _name(copy._name),
+									_signed(copy._signed),
+									_gradeToSign(copy._gradeToSign),
+									_gradeToExecute(copy._gradeToExecute) {}
 
 AForm::~AForm(void) {}
 

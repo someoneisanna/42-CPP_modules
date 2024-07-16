@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:09:01 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:01:11 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:55:18 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 // Constructors, Destructor & Assignment Overload ------------------------------
 
-PresidentialPardonForm::PresidentialPardonForm() :
-			AForm("PresidentialPardonForm", 25, 5), _target("Default") {}
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5),
+													_target("Default") {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-			AForm("PresidentialPardonForm", 25, 5), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5),
+																	_target(target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy) :
-			AForm(copy), _target(copy._target)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy) : AForm(copy),
+																					_target(copy._target)
 {
 	*this = copy;
 }

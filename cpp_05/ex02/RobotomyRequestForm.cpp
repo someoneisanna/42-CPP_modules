@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:47:42 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:02:00 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:55:28 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 // Constructors, Destructor & Assignment Overload ------------------------------
 
-RobotomyRequestForm::RobotomyRequestForm() :
-			AForm("RobotomyRequestForm", 72, 45), _target("Default") {}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45),
+											_target("Default") {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-			AForm("RobotomyRequestForm", 72, 45), _target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45),
+																_target(target) {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) :
-			AForm(src), _target(src._target)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : AForm(src),
+																			_target(src._target)
 {
 	*this = src;
 }

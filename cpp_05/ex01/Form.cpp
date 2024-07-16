@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:23:34 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 13:46:33 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:29:28 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 // Constructors, Destructor & Assignment Overload ------------------------------
 
-Form::Form(void) : _name("Form"), _signed(false), _gradeToSign(150), _gradeToExecute(150) {}
+Form::Form(void) : _name("Form"),
+					_signed(false),
+					_gradeToSign(150),
+					_gradeToExecute(150) {}
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
-	_signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+																	_signed(false),
+																	_gradeToSign(gradeToSign),
+																	_gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
@@ -25,8 +30,10 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(Form const &copy) : _name(copy._name), _signed(copy._signed),
-	_gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute) {}
+Form::Form(Form const &copy) : _name(copy._name),
+								_signed(copy._signed),
+								_gradeToSign(copy._gradeToSign),
+								_gradeToExecute(copy._gradeToExecute) {}
 
 Form::~Form(void) {}
 

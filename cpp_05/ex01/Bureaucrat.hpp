@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:27:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 13:27:03 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:38:29 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 #include <string>
 #include <cstdlib>
 #include "Form.hpp"
+
+# define GREEN	"\033[32m"
+# define RED	"\033[1;31m"
+# define ORANGE	"\033[38;2;255;165;0m"
+# define PINK	"\033[38;5;206m"
+# define BOLD	"\033[1m"
+# define RESET	"\033[0m"
 
 class Form;
 

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:59:04 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:24:49 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/16 14:50:21 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 // Constructors, Destructor & Assignment Overload ------------------------------
 
-ShrubberyCreationForm::ShrubberyCreationForm() :
-			AForm("ShrubberyCreationForm", 145, 137), _target("Default") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137),
+												_target("Default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
-			AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137),
+																	_target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
-			AForm(src), _target(src._target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) : AForm(src),
+																				_target(src._target)
 {
 	*this = src;
 }
