@@ -45,6 +45,8 @@ class AForm
 		virtual void	execute(Bureaucrat const &executor) const = 0;
 		bool			checkExecution(Bureaucrat const &executor) const;
 
+		virtual			std::string getTarget() const = 0;
+
 		class GradeTooHighException : public std::exception
 		{
 			public:

@@ -87,7 +87,8 @@ std::ostream &operator<<(std::ostream &o, AForm const &src)
 	o << "AForm: " << src.getName()
 		<< " | Signed: " << src.getSigned()
 		<< " | Grade to Sign: " << src.getGradeToSign()
-		<< " | Grade to Execute: " << src.getGradeToExecute() << std::endl;
+		<< " | Grade to Execute: " << src.getGradeToExecute()
+		<< " | Target: " << src.getTarget() << std::endl;
 	return (o);
 }
 

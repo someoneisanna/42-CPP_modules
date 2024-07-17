@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:01:13 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:01:19 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:17:17 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm(void);
 
 		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
+
+		std::string getTarget() const;
 
 		virtual void execute(Bureaucrat const &executor) const;
 };

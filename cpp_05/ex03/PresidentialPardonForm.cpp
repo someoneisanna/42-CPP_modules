@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:09:01 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:01:11 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:17:49 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 		this->_target = src._target;
 	return (*this);
 }
+
+// Accessors -------------------------------------------------------------------
+
+std::string PresidentialPardonForm::getTarget() const { return (this->_target); }
 
 // Member Functions ------------------------------------------------------------
 

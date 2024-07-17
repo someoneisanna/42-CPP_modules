@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 17:48:33 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 18:19:09 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:01:48 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,25 @@ AForm *Intern::makeShrubberyCreationForm(std::string target) { return (new Shrub
 
 AForm *Intern::makeForm(std::string formName, std::string target)
 {
-	if (formName == "presidential pardon" || formName == "shrubbery creation" || formName == "robotomy request")
+	AForm* (Intern::*formList[3])(std::string) =
 	{
-		std::cout << GREEN << "Intern creates " << formName << " form" << RESET << std::endl;
-		if (formName == "presidential pardon")
-			return (makePresidentialPardonForm(target));
-		else if (formName == "shrubbery creation")
-			return (makeShrubberyCreationForm(target));
-		else
-			return (makeRobotomyRequestForm(target));
+		&Intern::makePresidentialPardonForm,
+		&Intern::makeRobotomyRequestForm,
+		&Intern::makeShrubberyCreationForm
+	};
+	std::string formNames[3] =
+	{
+		"presidential pardon",
+		"robotomy request",
+		"shrubbery creation"
+	};
+	for (int i = 0; i < 3; i++)
+	{
+		if (formName == formNames[i])
+		{
+			std::cout << GREEN << "Intern creates " << formName << " form" << RESET << std::endl;
+			return (this->*formList[i])(target);
+		}
 	}
 	std::cout << RED << "Form not found" << RESET << std::endl;
 	return (NULL);

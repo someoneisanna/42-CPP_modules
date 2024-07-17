@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:49:16 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:01:28 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:17:23 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class RobotomyRequestForm : public AForm
 		~RobotomyRequestForm(void);
 
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
+
+		std::string getTarget() const;
 
 		virtual void execute(Bureaucrat const &executor) const;
 };

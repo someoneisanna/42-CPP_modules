@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:59:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:06:04 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:17:27 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm(void);
 
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+
+		std::string getTarget() const;
 
 		virtual void execute(Bureaucrat const &executor) const;
 };

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:59:04 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:24:49 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:18:16 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 		this->_target = src._target;
 	return (*this);
 }
+
+// Accessors -------------------------------------------------------------------
+
+std::string ShrubberyCreationForm::getTarget() const { return (this->_target); }
+
 
 // Member Functions ------------------------------------------------------------
 

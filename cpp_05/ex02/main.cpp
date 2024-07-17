@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:58:47 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/24 17:41:29 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/17 15:44:08 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main()
 		std::cout << p1;
 		try
 		{
-			p1.execute(b1);
+			//p1.execute(b1);
 			b1.executeForm(p1);
 		}
 		catch(const std::exception& e)
@@ -65,7 +65,7 @@ int main()
 		std::cout << p1;
 		try
 		{
-			p1.execute(b1);
+			//p1.execute(b1);
 			b1.executeForm(p1);
 		}
 		catch(const std::exception& e)
@@ -78,7 +78,7 @@ int main()
 		std::cout << p1;
 		try
 		{
-			p1.execute(b2);
+			//p1.execute(b2);
 			b2.executeForm(p1);
 		}
 		catch(const std::exception& e)
@@ -98,7 +98,7 @@ int main()
 		std::cout << p1;
 		try
 		{
-			p1.execute(b1);
+			//p1.execute(b1);
 			b1.executeForm(p1);
 		}
 		catch(const std::exception& e)
@@ -111,7 +111,7 @@ int main()
 		std::cout << p1;
 		try
 		{
-			p1.execute(b1);
+			//p1.execute(b1);
 			b1.executeForm(p1);
 		}
 		catch(const std::exception& e)
@@ -124,7 +124,7 @@ int main()
 		std::cout << p1;
 		try
 		{
-			p1.execute(b2);
+			//p1.execute(b2);
 			b2.executeForm(p1);
 		}
 		catch(const std::exception& e)
