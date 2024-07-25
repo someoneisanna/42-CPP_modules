@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/27 11:20:26 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:08:46 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	// Test with VECTOR container ----------------------------------------------
 
-	std::cout << "\n-------------- VECTOR container --------------" << std::endl;
+	std::cout << "\n------------ INT VECTOR container ------------" << std::endl;
 
 	std::vector<int>	c1;
 	int					v1 = 3;

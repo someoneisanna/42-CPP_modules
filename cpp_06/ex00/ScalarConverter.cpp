@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 09:24:49 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/28 16:24:34 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:54:37 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 // Function Prototypes ---------------------------------------------------------
 
+static bool isChar(std::string input);
+static bool isInt(std::string input);
+static bool isFloat(std::string input);
+static bool isDouble(std::string input);
+static bool isPseudo(std::string input);
+
+static void printTable(int type, std::string input);
 static void printPseudo(std::string s);
 static void printChar(long double n);
 static void printInt(long double n);
@@ -52,14 +59,14 @@ void ScalarConverter::convert(std::string input)
 
 // Boolean Functions -----------------------------------------------------------
 
-bool ScalarConverter::isChar(std::string input)
+static bool isChar(std::string input)
 {
 	if (input.length() == 1 && !isdigit(input[0]))
 		return (true);
 	return (false);
 }
 
-bool ScalarConverter::isInt(std::string input)
+static bool isInt(std::string input)
 {
 	for (size_t i = 0; i < input.length(); i++)
 	{
@@ -71,7 +78,7 @@ bool ScalarConverter::isInt(std::string input)
 	return (true);
 }
 
-bool ScalarConverter::isFloat(std::string input)
+static bool isFloat(std::string input)
 {
 	int dot_found = 0;
 	for (size_t i = 0; i < input.length(); i++)
@@ -90,7 +97,7 @@ bool ScalarConverter::isFloat(std::string input)
 	return (true);
 }
 
-bool ScalarConverter::isDouble(std::string input)
+static bool isDouble(std::string input)
 {
 	int dot_found = 0;
 	for (size_t i = 0; i < input.length(); i++)
@@ -105,7 +112,7 @@ bool ScalarConverter::isDouble(std::string input)
 	return (true);
 }
 
-bool ScalarConverter::isPseudo(std::string input)
+static bool isPseudo(std::string input)
 {
 	if (input == "-inff" || input == "+inff" || input == "nanf" ||
 		input == "-inf" || input == "+inf" || input == "nan")
@@ -115,7 +122,7 @@ bool ScalarConverter::isPseudo(std::string input)
 
 // Print Functions -------------------------------------------------------------
 
-void	ScalarConverter::printTable(int type, std::string input)
+static void	printTable(int type, std::string input)
 {
 	long double n;
 	if (type == PSEUDO)

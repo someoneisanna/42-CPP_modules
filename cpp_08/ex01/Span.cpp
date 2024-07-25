@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 11:22:45 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/27 15:45:46 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:36:12 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	Span::addNumbers()
 	{
 		for (unsigned int i = _storage.size(); i != this->_N; i++)
 			this->_storage.push_back(rand() % 100000);
+		std::sort(this->_storage.begin(), this->_storage.end());
 	}
 	else
 		throw Span::StorageFullException();
@@ -56,13 +57,14 @@ int		Span::shortestSpan()
 		throw Span::NoSpanException();
 
 	std::vector<int> cpy = this->_storage;
-
 	std::sort(cpy.begin(), cpy.end());
-	int shortest = cpy[1] - cpy[0];
-	for (size_t i = 1; i < cpy.size(); i++)
+
+	int shortest = std::numeric_limits<int>::max();
+	for (std::vector<int>::iterator it = cpy.begin(); it != cpy.end() - 1; it++)
 	{
-		if (cpy[i] - cpy[i - 1] < shortest)
-			shortest = cpy[i] - cpy[i - 1];
+		int span = *(it + 1) - *it;
+		if (span < shortest)
+			shortest = span;
 	}
 	return (shortest);
 }

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/27 16:03:43 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:37:57 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,16 @@ int main(void)
 
 		try 						{ std::cout << "Longest Span: " << sp2.longestSpan() << std::endl; }
 		catch (std::exception &e)	{ std::cout << e.what() << std::endl; }
+	}
+
+	// Test 5 - Bigger Arrays
+	{
+		std::cout << "\n---------- TEST 5 - BIGGER ARRAYS ---------" << "\n\n";
+		Span sp1(20000);
+		sp1.addNumbers();
+
+		std::cout << "Shortest Span: " << sp1.shortestSpan() << std::endl;
+		std::cout << "Longest Span : " << sp1.longestSpan() << std::endl;
 	}
 	std::cout << std::endl;
 }

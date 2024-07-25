@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/25 18:03:20 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:12:10 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int main(int ac, char **av)
 		std::cout << "Error: Invalid number of arguments" << std::endl;
 		return (1);
 	}
+
+	//ScalarConverter a; // Error: Constructor is private so it can't be instantiated
 
 	ScalarConverter::convert(av[1]);
 	ask_for_input("\nDo you want to look at some edge cases? [y/n]:");

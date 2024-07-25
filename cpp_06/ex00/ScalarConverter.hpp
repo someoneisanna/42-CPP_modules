@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 09:24:07 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/25 17:44:57 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/18 15:45:38 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,9 @@ class ScalarConverter
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const &src);
 		~ScalarConverter();
+
 		ScalarConverter &operator=(ScalarConverter const &src);
 
-		static bool isChar(std::string input);
-		static bool isInt(std::string input);
-		static bool isFloat(std::string input);
-		static bool isDouble(std::string input);
-		static bool isPseudo(std::string input);
-
-		static void printTable(int type, std::string input);
 	public:
 		static void convert(std::string input);
 };

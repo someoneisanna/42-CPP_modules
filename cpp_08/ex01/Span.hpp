@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 11:22:50 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/27 15:41:39 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:19:47 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SPAN_HPP
 
 #include <iostream>
+#include <limits>
 #include <vector>
 #include <algorithm>
 

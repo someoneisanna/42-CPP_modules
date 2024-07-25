@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:06:48 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/27 16:52:12 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:09:17 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@
 #include <list>
 #include <deque>
 
-template <typename T, typename C = std::deque<T> >
-class MutantStack : public std::stack<T, C>
+template <typename T>
+class MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack() : std::stack<T, C>() {}
-		MutantStack(MutantStack const &src) : std::stack<T, C>(src) {}
+		MutantStack() : std::stack<T>() {}
+		MutantStack(MutantStack const &src) : std::stack<T>(src) {}
 		virtual ~MutantStack() {}
 
 		MutantStack &operator=(MutantStack const &src)
 		{
 			if (this != &src)
-				std::stack<T, C>::operator=(src);
+				std::stack<T>::operator=(src);
 			return (*this);
 		}
 
-		typedef typename C::iterator iterator;
-		iterator begin() { return std::stack<T, C>::c.begin(); }
-		iterator end() { return std::stack<T, C>::c.end(); }
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		iterator begin() { return std::stack<T>::c.begin(); }
+		iterator end() { return std::stack<T>::c.end(); }
 };
 
 #endif
