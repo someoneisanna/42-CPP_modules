@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:26:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/03/04 16:19:52 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/27 18:03:09 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,75 @@ void PmergeMe::_sortContainers()
 {
 	std::cout << PURPLE << "Before: " << RESET;
 	printList(_l);
-	//printDeque(_d);
+	printDeque(_d);
 
 	clock_t l_time = _sortList(_l);
 	clock_t d_time = _sortDeque(_d);
 
 	std::cout << PURPLE << "After : " << RESET;
 	printList(_l);
-	//printDeque(_d);
+	printDeque(_d);
 
 	std::cout << "Time to process a range of " << _l.size() << " elements with std::list <int>: " << l_time << " ms" << std::endl;
 	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque<int>: " << d_time << " ms" << std::endl;
 }
 
+void binaryInsertion(std::list<int> &l, int n)
+{
+	std::list<int>::iterator it = std::lower_bound(l.begin(), l.end(), n);
+	l.insert(it, n);
+}
+
 clock_t PmergeMe::_sortList(std::list<int> &l)
 {
+	if (l.size() < 1)
+		return (0);
+		
+	// Start timer
 	clock_t start = clock();
+
+	std::list<int>				a, b;
+	std::list<int>::iterator	it, it_a, it_b;
+
+	// 1st step: Pairwise comparison - sort each pair (a[i] > b[i])
+	for (it = l.begin(); it != l.end();)
+	{
+		int first = *it++;
+		if (it == l.end())
+		{
+			b.push_back(first);
+			break;
+		}
+		int second = *it++;
+		if (first < second)
+		{
+			a.push_back(second);
+			b.push_back(first);
+		}
+		else
+		{
+			a.push_back(first);
+			b.push_back(second);
+		}
+	}
+
+	// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
+	//recursiveListSort(a, b, 0);
+	recursiveListSort(a, b, 0);
+	
+	// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
+	for (it_b = b.begin(); it_b != b.end(); it_b++)
+		binaryInsertion(a, *it_b);
+	
+	// Copy sorted list back to original list
+	l = a;
+	return (clock() - start);
+}
+
+/*clock_t PmergeMe::_sortList(std::list<int> &l)
+{
+	clock_t start = clock();
+	
 	if (l.size() > 1)
 	{
 		std::list<int>				a, b;
@@ -119,7 +172,7 @@ clock_t PmergeMe::_sortList(std::list<int> &l)
 
 	}
 	return (clock() - start);
-}
+}*/
 
 clock_t PmergeMe::_sortDeque(std::deque<int> &d)
 {

@@ -16,7 +16,9 @@
 #include <algorithm>
 #include <iostream>
 #include <cstdlib>
+#include <limits>
 #include <string>
+#include <cmath>
 #include <deque>
 #include <list>
 
