@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:26:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/07/27 18:03:09 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/28 14:54:51 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,24 +58,20 @@ void PmergeMe::_fillContainers(char **av)
 void PmergeMe::_sortContainers()
 {
 	std::cout << PURPLE << "Before: " << RESET;
-	printList(_l);
-	printDeque(_d);
+	printContainer(_l);
+	std::cout << "        ";
+	printContainer(_d);
 
 	clock_t l_time = _sortList(_l);
 	clock_t d_time = _sortDeque(_d);
 
 	std::cout << PURPLE << "After : " << RESET;
-	printList(_l);
-	printDeque(_d);
+	printContainer(_l);
+	std::cout << "        ";
+	printContainer(_d);
 
 	std::cout << "Time to process a range of " << _l.size() << " elements with std::list <int>: " << l_time << " ms" << std::endl;
 	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque<int>: " << d_time << " ms" << std::endl;
-}
-
-void binaryInsertion(std::list<int> &l, int n)
-{
-	std::list<int>::iterator it = std::lower_bound(l.begin(), l.end(), n);
-	l.insert(it, n);
 }
 
 clock_t PmergeMe::_sortList(std::list<int> &l)
@@ -86,8 +82,9 @@ clock_t PmergeMe::_sortList(std::list<int> &l)
 	// Start timer
 	clock_t start = clock();
 
-	std::list<int>				a, b;
-	std::list<int>::iterator	it, it_a, it_b;
+	int							n_erased, b_size;
+	std::list<int>				a, b, jacobsthal;
+	std::list<int>::iterator	it, it_b, it_j;
 
 	// 1st step: Pairwise comparison - sort each pair (a[i] > b[i])
 	for (it = l.begin(); it != l.end();)
@@ -112,143 +109,111 @@ clock_t PmergeMe::_sortList(std::list<int> &l)
 	}
 
 	// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
-	//recursiveListSort(a, b, 0);
 	recursiveListSort(a, b, 0);
-	
+
 	// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
-	for (it_b = b.begin(); it_b != b.end(); it_b++)
-		binaryInsertion(a, *it_b);
+
+	// Here, we work in batches of elements
+	// The Jacobsthal sequence is used to determine the position of the element that will be inserted
+	// For example:
+	// First Batch  | k = 1 | t_k = 1  | to be inserted in A: b1
+	// Second Batch | k = 2 | t_k = 3  | to be inserted in A: b3, b2
+	// Third Batch  | k = 3 | t_k = 5  | to be inserted in A: b5, b4, b3
+	// Fourth Batch | k = 4 | t_k = 11 | to be inserted in A: b11, b10, b9, b8, b7, b6, b5
+
+	n_erased = 0;
+	b_size = static_cast<int>(b.size());
+	jacobsthal = getJacobsthalSequence< std::list<int> >(b_size);
+
+	for (it_j = jacobsthal.begin(); it_j != jacobsthal.end() && b.size() != 0; it_j++)
+	{
+		if (*it_j >= 0 && *it_j < b_size)
+		{
+			it_b = b.begin();
+			std::advance(it_b, *it_j - n_erased);
+		}
+		else
+			it_b = b.end();
+		while(it_b != b.begin())
+		{
+			--it_b;
+			binaryInsertion(a, *it_b);
+			it_b = b.erase(it_b);
+			n_erased++;
+		}
+	}
 	
 	// Copy sorted list back to original list
 	l = a;
 	return (clock() - start);
 }
 
-/*clock_t PmergeMe::_sortList(std::list<int> &l)
-{
-	clock_t start = clock();
-	
-	if (l.size() > 1)
-	{
-		std::list<int>				a, b;
-		std::list<int>::iterator	it, it_a, it_b;
-
-		// Create pairs of elements
-		for (it = l.begin(); it != l.end();)
-		{
-			a.push_back(*it);
-			it++;
-			if (it != l.end())
-			{
-				b.push_back(*it);
-				it++;
-			}
-			if (it == l.end() && a.size() > b.size())
-			{
-				b.push_back(a.back());
-				a.pop_back();
-			}
-		}
-
-		// 1st step: Pairwise comparison - sort each pair (a[i] > b[i])
-		for (it_a = a.begin(), it_b = b.begin(); it_a != a.end(); it_a++, it_b++)
-		{
-			if (*it_a < *it_b)
-				std::swap(*it_a, *it_b);
-		}
-
-		// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
-		recursiveListSort(a, b, 0);
-
-		// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
-		for (it_b = b.begin(); it_b != b.end(); it_b++)
-		{
-			it = std::lower_bound(a.begin(), a.end(), *it_b);
-			a.insert(it, *it_b);
-		}
-
-		// Copy sorted list back to original list
-		l = a;
-
-	}
-	return (clock() - start);
-}*/
-
 clock_t PmergeMe::_sortDeque(std::deque<int> &d)
 {
+	if (d.size() < 1)
+		return (0);
+		
+	// Start timer
 	clock_t start = clock();
-	if (d.size() > 1)
+
+	int							n_erased, b_size;
+	std::deque<int>				a, b, jacobsthal;
+	std::deque<int>::iterator	it, it_b, it_j;
+
+	// 1st step: Pairwise comparison - sort each pair (a[i] > b[i])
+	for (it = d.begin(); it != d.end();)
 	{
-		std::deque<int>				a, b;
-		std::deque<int>::iterator	it, it_a, it_b;
-
-		// Create pairs of elements
-		for (it = d.begin(); it != d.end();)
+		int first = *it++;
+		if (it == d.end())
 		{
-			a.push_back(*it);
-			it++;
-			if (it != d.end())
-			{
-				b.push_back(*it);
-				it++;
-			}
-			if (it == d.end() && a.size() > b.size())
-			{
-				b.push_back(a.back());
-				a.pop_back();
-			}
+			b.push_back(first);
+			break;
 		}
-
-		// 1st step: Pairwise comparison - sort each pair (a[i] > b[i])
-		for (it_a = a.begin(), it_b = b.begin(); it_a != a.end(); it_a++, it_b++)
+		int second = *it++;
+		if (first < second)
 		{
-			if (*it_a < *it_b)
-				std::swap(*it_a, *it_b);
+			a.push_back(second);
+			b.push_back(first);
 		}
-
-		// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
-		recursiveDequeSort(a, b, 0);
-
-		// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
-		for (it_b = b.begin(); it_b != b.end(); it_b++)
+		else
 		{
-			it = std::lower_bound(a.begin(), a.end(), *it_b);
-			a.insert(it, *it_b);
+			a.push_back(first);
+			b.push_back(second);
 		}
-
-		// Copy sorted deque back to original deque
-		d = a;
 	}
+
+	// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
+	recursiveDequeSort(a, b, 0);
+
+	// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
+	n_erased = 0;
+	b_size = static_cast<int>(b.size());
+	jacobsthal = getJacobsthalSequence< std::deque<int> >(b.size());
+
+	for (it_j = jacobsthal.begin(); it_j != jacobsthal.end() && b.size() != 0; it_j++)
+	{
+		if (*it_j >= 0 && *it_j < b_size)
+		{
+			it_b = b.begin();
+			std::advance(it_b, *it_j - n_erased);
+		}
+		else
+			it_b = b.end();
+		while(it_b != b.begin())
+		{
+			--it_b;
+			binaryInsertion(a, *it_b);
+			it_b = b.erase(it_b);
+			n_erased++;
+		}
+	}
+	
+	// Copy sorted list back to original list
+	d = a;
 	return (clock() - start);
 }
 
 // Helper Functions ----------------------------------------------------------------
-
-void printList(std::list<int> l)
-{
-	std::list<int>::iterator it = l.begin();
-	while (it != l.end())
-	{
-		std::cout << *it;
-		it++;
-		if (it != l.end())
-			std::cout << " ";
-	}
-	std::cout << std::endl;
-}
-
-void printDeque(std::deque<int> d)
-{
-	std::deque<int>::iterator it = d.begin();
-	while (it != d.end())
-	{
-		std::cout << *it;
-		it++;
-		if (it != d.end())
-			std::cout << " ";
-	}
-	std::cout << std::endl;
-}
 
 void recursiveListSort(std::list<int> &a, std::list<int> &b, unsigned int i)
 {

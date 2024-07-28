@@ -45,8 +45,39 @@ class PmergeMe
 		PmergeMe &operator=(PmergeMe const &src);
 };
 
-void printList(std::list<int> l);
-void printDeque(std::deque<int> d);
+template <typename Container>
+Container getJacobsthalSequence(int n)
+{
+	Container jacobsthal;
+	for (int k = 1; k <= n; k++)
+	{
+		int t_k = (std::pow(2, k + 1) + std::pow(-1, k))/3;
+		jacobsthal.push_back(t_k);
+	}
+	return (jacobsthal);
+}
+
+template <typename Container>
+void binaryInsertion(Container &c, int n)
+{
+	typename Container::iterator it = std::lower_bound(c.begin(), c.end(), n);
+	c.insert(it, n);
+}
+
+template <typename Container>
+void printContainer(Container &c)
+{
+	typename Container::iterator it = c.begin();
+	while (it != c.end())
+	{
+		std::cout << *it;
+		it++;
+		if (it != c.end())
+			std::cout << " ";
+	}
+	std::cout << std::endl;
+}
+
 void recursiveListSort(std::list<int> &a, std::list<int> &b, unsigned int i);
 void recursiveDequeSort(std::deque<int> &a, std::deque<int> &b, unsigned int i);
 
