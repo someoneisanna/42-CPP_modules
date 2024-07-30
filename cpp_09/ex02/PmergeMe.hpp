@@ -18,9 +18,9 @@
 #include <cstdlib>
 #include <limits>
 #include <string>
-#include <cmath>
+#include <vector>
 #include <deque>
-#include <list>
+#include <cmath>
 
 #define RESET		"\033[0m"
 #define PURPLE		"\033[35m"
@@ -28,12 +28,12 @@
 class PmergeMe
 {
 	private:
-		std::list<int>	_l;
-		std::deque<int>	_d;
+		std::vector<int>	_l;
+		std::deque<int>		_d;
 
 		void	_fillContainers(char **av);
 		void	_sortContainers();
-		clock_t	_sortList(std::list<int> &l);
+		clock_t	_sortVector(std::vector<int> &l);
 		clock_t	_sortDeque(std::deque<int> &d);
 
 	public:
@@ -78,7 +78,7 @@ void printContainer(Container &c)
 	std::cout << std::endl;
 }
 
-void recursiveListSort(std::list<int> &a, std::list<int> &b, unsigned int i);
+void recursiveVectorSort(std::vector<int> &a, std::vector<int> &b, unsigned int i);
 void recursiveDequeSort(std::deque<int> &a, std::deque<int> &b, unsigned int i);
 
 #endif

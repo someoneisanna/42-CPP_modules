@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:26:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/07/28 14:54:51 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/30 16:48:52 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,24 @@ void PmergeMe::_fillContainers(char **av)
 
 void PmergeMe::_sortContainers()
 {
-	std::cout << PURPLE << "Before: " << RESET;
-	printContainer(_l);
-	std::cout << "        ";
-	printContainer(_d);
+	//std::cout << PURPLE << "Before: " << RESET;
+	//printContainer(_l);
+	//std::cout << "        ";
+	//printContainer(_d);
 
-	clock_t l_time = _sortList(_l);
+	clock_t l_time = _sortVector(_l);
 	clock_t d_time = _sortDeque(_d);
 
-	std::cout << PURPLE << "After : " << RESET;
-	printContainer(_l);
-	std::cout << "        ";
-	printContainer(_d);
+	//std::cout << PURPLE << "After : " << RESET;
+	//printContainer(_l);
+	//std::cout << "        ";
+	//printContainer(_d);
 
-	std::cout << "Time to process a range of " << _l.size() << " elements with std::list <int>: " << l_time << " ms" << std::endl;
+	std::cout << "Time to process a range of " << _l.size() << " elements with std::vector <int>: " << l_time << " ms" << std::endl;
 	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque<int>: " << d_time << " ms" << std::endl;
 }
 
-clock_t PmergeMe::_sortList(std::list<int> &l)
+clock_t PmergeMe::_sortVector(std::vector<int> &l)
 {
 	if (l.size() < 1)
 		return (0);
@@ -83,8 +83,8 @@ clock_t PmergeMe::_sortList(std::list<int> &l)
 	clock_t start = clock();
 
 	int							n_erased, b_size;
-	std::list<int>				a, b, jacobsthal;
-	std::list<int>::iterator	it, it_b, it_j;
+	std::vector<int>				a, b, jacobsthal;
+	std::vector<int>::iterator	it, it_b, it_j;
 
 	// 1st step: Pairwise comparison - sort each pair (a[i] > b[i])
 	for (it = l.begin(); it != l.end();)
@@ -109,7 +109,7 @@ clock_t PmergeMe::_sortList(std::list<int> &l)
 	}
 
 	// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
-	recursiveListSort(a, b, 0);
+	recursiveVectorSort(a, b, 0);
 
 	// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
 
@@ -123,7 +123,7 @@ clock_t PmergeMe::_sortList(std::list<int> &l)
 
 	n_erased = 0;
 	b_size = static_cast<int>(b.size());
-	jacobsthal = getJacobsthalSequence< std::list<int> >(b_size);
+	jacobsthal = getJacobsthalSequence< std::vector<int> >(b_size);
 
 	for (it_j = jacobsthal.begin(); it_j != jacobsthal.end() && b.size() != 0; it_j++)
 	{
@@ -215,12 +215,12 @@ clock_t PmergeMe::_sortDeque(std::deque<int> &d)
 
 // Helper Functions ----------------------------------------------------------------
 
-void recursiveListSort(std::list<int> &a, std::list<int> &b, unsigned int i)
+void recursiveVectorSort(std::vector<int> &a, std::vector<int> &b, unsigned int i)
 {
-	a.sort();
+	std::sort(a.begin(), a.end());
 
-	std::list<int>::iterator it_a = a.begin();
-	std::list<int>::iterator it_b = b.begin();
+	std::vector<int>::iterator it_a = a.begin();
+	std::vector<int>::iterator it_b = b.begin();
 	std::advance(it_a, i);
 	std::advance(it_b, i);
 
@@ -228,7 +228,7 @@ void recursiveListSort(std::list<int> &a, std::list<int> &b, unsigned int i)
 		std::swap(*it_a, *it_b);
 
 	if (i < a.size() - 1)
-		recursiveListSort(a, b, i + 1);
+		recursiveVectorSort(a, b, i + 1);
 }
 
 void recursiveDequeSort(std::deque<int> &a, std::deque<int> &b, unsigned int i)
