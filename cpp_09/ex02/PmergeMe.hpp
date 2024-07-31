@@ -13,6 +13,8 @@
 #ifndef PMERGEME_HPP
 # define PMERGEME_HPP
 
+// Includes --------------------------------------------------------------------
+
 #include <algorithm>
 #include <iostream>
 #include <cstdlib>
@@ -22,8 +24,12 @@
 #include <deque>
 #include <cmath>
 
+// Defines ---------------------------------------------------------------------
+
 #define RESET		"\033[0m"
 #define PURPLE		"\033[35m"
+
+// Class -----------------------------------------------------------------------
 
 class PmergeMe
 {
@@ -45,6 +51,8 @@ class PmergeMe
 		PmergeMe &operator=(PmergeMe const &src);
 };
 
+// Template Functions ----------------------------------------------------------
+
 template <typename Container>
 Container getJacobsthalSequence(int n)
 {
@@ -65,6 +73,66 @@ void binaryInsertion(Container &c, int n)
 }
 
 template <typename Container>
+void merge(Container& a, Container& b, int left, int mid, int right)
+{
+	int n1 = mid - left + 1;
+	int n2 = right - mid;
+
+	Container L1(n1), R1(n2), L2(n1), R2(n2);
+	
+	for (int i = 0; i < n1; i++)
+	{
+		L1[i] = a[left + i];
+		L2[i] = b[left + i];
+	}
+	for (int j = 0; j < n2; j++)
+	{
+		R1[j] = a[mid + 1 + j];
+		R2[j] = b[mid + 1 + j];
+	}
+	
+	int i = 0, j = 0, k = left;
+	while (i < n1 && j < n2)
+	{
+		if (L1[i] <= R1[j])
+		{
+			a[k] = L1[i];
+			b[k] = L2[i++];
+		}
+		else
+		{
+			a[k] = R1[j];
+			b[k] = R2[j++];
+		}
+		k++;
+	}
+
+	while (i < n1)
+	{
+		a[k] = L1[i];
+		b[k] = L2[i++];
+		k++;
+	}
+	while (j < n2)
+	{
+		a[k] = R1[j];
+		b[k] = R2[j++];
+		k++;
+	}
+}
+
+template <typename Container>
+void recursiveSort(Container &a, Container &b, int left, int right)
+{
+	if (left >= right)
+		return;
+	int mid = left + (right - left) / 2;
+	recursiveSort(a, b, left, mid);
+	recursiveSort(a, b, mid + 1, right);
+	merge(a, b, left, mid, right);
+}
+
+template <typename Container>
 void printContainer(Container &c)
 {
 	typename Container::iterator it = c.begin();
@@ -77,8 +145,5 @@ void printContainer(Container &c)
 	}
 	std::cout << std::endl;
 }
-
-void recursiveVectorSort(std::vector<int> &a, std::vector<int> &b, unsigned int i);
-void recursiveDequeSort(std::deque<int> &a, std::deque<int> &b, unsigned int i);
 
 #endif

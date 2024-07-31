@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:26:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/07/30 16:48:52 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/07/31 16:18:35 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,18 @@ void PmergeMe::_fillContainers(char **av)
 
 void PmergeMe::_sortContainers()
 {
-	//std::cout << PURPLE << "Before: " << RESET;
-	//printContainer(_l);
-	//std::cout << "        ";
-	//printContainer(_d);
+	std::cout << PURPLE << "Before: " << RESET;
+	printContainer(_l);
+	std::cout << "        ";
+	printContainer(_d);
 
 	clock_t l_time = _sortVector(_l);
 	clock_t d_time = _sortDeque(_d);
 
-	//std::cout << PURPLE << "After : " << RESET;
-	//printContainer(_l);
-	//std::cout << "        ";
-	//printContainer(_d);
+	std::cout << PURPLE << "After : " << RESET;
+	printContainer(_l);
+	std::cout << "        ";
+	printContainer(_d);
 
 	std::cout << "Time to process a range of " << _l.size() << " elements with std::vector <int>: " << l_time << " ms" << std::endl;
 	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque<int>: " << d_time << " ms" << std::endl;
@@ -109,8 +109,8 @@ clock_t PmergeMe::_sortVector(std::vector<int> &l)
 	}
 
 	// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
-	recursiveVectorSort(a, b, 0);
-
+	recursiveSort(a, b, 0, static_cast<int>(a.size()) - 1);
+	
 	// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
 
 	// Here, we work in batches of elements
@@ -183,7 +183,7 @@ clock_t PmergeMe::_sortDeque(std::deque<int> &d)
 	}
 
 	// 2nd step: Recursion - a is sorted recursively (a[i] < a[i+1] and a[i] > b[i])
-	recursiveDequeSort(a, b, 0);
+	recursiveSort(a, b, 0, static_cast<int>(a.size()) - 1);
 
 	// 3rd step: Insertion - 'b' is inserted into 'a' using Binary Insertion
 	n_erased = 0;
@@ -211,38 +211,4 @@ clock_t PmergeMe::_sortDeque(std::deque<int> &d)
 	// Copy sorted list back to original list
 	d = a;
 	return (clock() - start);
-}
-
-// Helper Functions ----------------------------------------------------------------
-
-void recursiveVectorSort(std::vector<int> &a, std::vector<int> &b, unsigned int i)
-{
-	std::sort(a.begin(), a.end());
-
-	std::vector<int>::iterator it_a = a.begin();
-	std::vector<int>::iterator it_b = b.begin();
-	std::advance(it_a, i);
-	std::advance(it_b, i);
-
-	if (*it_a < *it_b)
-		std::swap(*it_a, *it_b);
-
-	if (i < a.size() - 1)
-		recursiveVectorSort(a, b, i + 1);
-}
-
-void recursiveDequeSort(std::deque<int> &a, std::deque<int> &b, unsigned int i)
-{
-	std::sort(a.begin(), a.end());
-
-	std::deque<int>::iterator it_a = a.begin();
-	std::deque<int>::iterator it_b = b.begin();
-	std::advance(it_a, i);
-	std::advance(it_b, i);
-
-	if (*it_a < *it_b)
-		std::swap(*it_a, *it_b);
-
-	if (i < a.size() - 1)
-		recursiveDequeSort(a, b, i + 1);
 }
