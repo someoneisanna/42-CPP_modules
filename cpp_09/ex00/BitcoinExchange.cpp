@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:24:06 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/28 16:59:39 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:40:43 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,8 @@ void BitcoinExchange::_convertValue()
 		exit(1);
 	}
 	std::getline(file, header);
-	if (header != "date | value")
-	{
-		std::cerr << "Error: Missing header in input file" << std::endl;
-		exit(1);
-	}
+	if (!header.empty() && header != "date | value")
+		std::cerr << "Warning: This will be ignored as it should be the header" << std::endl;
 	while (std::getline(file, line))
 	{
 		if (line.find('|') == std::string::npos)

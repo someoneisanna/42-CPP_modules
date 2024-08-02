@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/28 20:14:16 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:49:04 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,5 @@ int main(int ac, char **av)
 		std::cerr << "Error: Invalid number of arguments" << std::endl;
 		return (1);
 	}
-	std::cout << "Original RPN   : ";
 	RPN rpn(av[1]);
-	std::cout << "Copy RPN       : ";
-	RPN rpn1(rpn);
-	std::cout << "Assignation RPN: ";
-	RPN rpn2 = rpn1;
 }

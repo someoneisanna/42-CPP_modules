@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:23:22 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/28 17:11:40 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:13:11 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define BITCOINEXCHANGE_HPP
 
 #include <iostream>
+#include <stdlib.h>
 #include <cstring>
 #include <fstream>
-#include <stdlib>
 #include <string>
 #include <map>
 

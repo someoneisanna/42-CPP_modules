@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
-/*   Updated: 2024/07/25 16:37:57 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:05:39 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,17 @@ int main(void)
 		sp.addNumber(3);
 		sp.printStorage();
 
-		try 						{ sp.addNumbers(); sp.printStorage(); }
+		std::vector<int> v;
+		for (int i = 1; i < 50; i++)
+			v.push_back(i);
+
+		try 						{ sp.addNumber(v.begin(), v.end()); sp.printStorage(); }
 		catch (std::exception &e)	{ std::cout << e.what() << std::endl; }
 
 		try 						{ sp.addNumber(4); }
 		catch (std::exception &e)	{ std::cout << e.what() << std::endl; }
 
-		try 						{ sp.addNumbers(); }
+		try 						{ sp.addNumber(v.begin(), v.end()); }
 		catch (std::exception &e)	{ std::cout << e.what() << std::endl; }
 	}
 
@@ -76,7 +80,12 @@ int main(void)
 	std::cout << "\n---------- TEST 3 - SHORTEST SPAN ---------" << "\n\n";
 	{
 		Span sp1(5);
-		sp1.addNumbers();
+
+		std::vector<int> v1;
+		for (int i = 1; i < 5; i++)
+			v1.push_back(i + 10);
+
+		sp1.addNumber(v1.begin(), v1.end());
 		sp1.printStorage();
 
 		try 						{ std::cout << "Shortest Span: " << sp1.shortestSpan() << std::endl; }
@@ -99,7 +108,12 @@ int main(void)
 	{
 		std::cout << "\n---------- TEST 4 - LONGEST SPAN ----------" << "\n\n";
 		Span sp1(5);
-		sp1.addNumbers();
+
+		std::vector<int> v2;
+		for (int i = 1; i < 5; i++)
+			v2.push_back(i + 10);
+
+		sp1.addNumber(v2.begin(), v2.end());
 		sp1.printStorage();
 
 		try 						{ std::cout << "Longest Span: " << sp1.longestSpan() << std::endl; }
@@ -122,10 +136,18 @@ int main(void)
 	{
 		std::cout << "\n---------- TEST 5 - BIGGER ARRAYS ---------" << "\n\n";
 		Span sp1(20000);
-		sp1.addNumbers();
 
-		std::cout << "Shortest Span: " << sp1.shortestSpan() << std::endl;
-		std::cout << "Longest Span : " << sp1.longestSpan() << std::endl;
+		std::vector<int> v3;
+		for (int i = 1; i < 20000; i++)
+			v3.push_back(rand() % 100000);
+		
+		sp1.addNumber(v3.begin(), v3.end());
+
+		try							{ std::cout << "Shortest Span: " << sp1.shortestSpan() << std::endl; }
+		catch (std::exception &e)	{ std::cout << e.what() << std::endl; }
+		
+		try							{ std::cout << "Longest Span : " << sp1.longestSpan() << std::endl; }
+		catch (std::exception &e)	{ std::cout << e.what() << std::endl; }
 	}
 	std::cout << std::endl;
 }

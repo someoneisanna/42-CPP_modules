@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 11:22:45 by ataboada          #+#    #+#             */
-/*   Updated: 2024/07/25 16:36:12 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/02 09:50:00 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,10 @@ void	Span::addNumber(int n)
 		throw Span::StorageFullException();
 }
 
-void	Span::addNumbers()
+void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-	if (this->_storage.size() < this->_N)
-	{
-		for (unsigned int i = _storage.size(); i != this->_N; i++)
-			this->_storage.push_back(rand() % 100000);
-		std::sort(this->_storage.begin(), this->_storage.end());
-	}
+	if (this->_storage.size() + std::distance(begin, end) <= this->_N)
+		this->_storage.insert(this->_storage.end(), begin, end);
 	else
 		throw Span::StorageFullException();
 }

@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:26:44 by ataboada          #+#    #+#             */
-/*   Updated: 2024/07/31 16:18:35 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/02 10:52:36 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ void PmergeMe::_sortContainers()
 	std::cout << "        ";
 	printContainer(_d);
 
-	std::cout << "Time to process a range of " << _l.size() << " elements with std::vector <int>: " << l_time << " ms" << std::endl;
-	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque<int>: " << d_time << " ms" << std::endl;
+	std::cout << "Time to process a range of " << _l.size() << " elements with std::vector<int> : " << l_time << " ms" << std::endl;
+	std::cout << "Time to process a range of " << _d.size() << " elements with std::deque<int>  : " << d_time << " ms" << std::endl;
 }
 
 clock_t PmergeMe::_sortVector(std::vector<int> &l)
