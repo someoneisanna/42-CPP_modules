@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:08:17 by ataboada          #+#    #+#             */
-/*   Updated: 2024/08/02 10:49:04 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:42:31 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,6 @@ int main(int ac, char **av)
 		return (1);
 	}
 	RPN rpn(av[1]);
+	//RPN rpn1 = rpn;
+	//RPN rpn2(rpn1);
 }

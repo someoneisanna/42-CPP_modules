@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:25:02 by ataboada          #+#    #+#             */
-/*   Updated: 2024/02/28 20:02:00 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:39:43 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <stdlib.h>
 
 class RPN
 {
@@ -32,8 +33,8 @@ class RPN
 
 		RPN &operator=(const RPN &src);
 
-		void	_parseExpression();
-		void	_solveOperand(char op);
+		int		_parseExpression();
+		int		_solveOperand(char op);
 		void	_printResult();
 };
 

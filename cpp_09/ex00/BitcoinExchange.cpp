@@ -6,7 +6,7 @@
 /*   By: ataboada <ataboada@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 10:24:06 by ataboada          #+#    #+#             */
-/*   Updated: 2024/08/02 10:40:43 by ataboada         ###   ########.fr       */
+/*   Updated: 2024/08/07 15:42:29 by ataboada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void BitcoinExchange::_convertValue()
 	std::ifstream	file(this->_filename.c_str());
 	std::string		header, line, date, svalue;
 	float			fvalue, result;
+	int				pipe_index;
 
 	if (!file.is_open())
 	{
@@ -70,7 +71,7 @@ void BitcoinExchange::_convertValue()
 		exit(1);
 	}
 	std::getline(file, header);
-	if (!header.empty() && header != "date | value")
+	if (!header.empty() && !std::isalpha(header[0]))
 		std::cerr << "Warning: This will be ignored as it should be the header" << std::endl;
 	while (std::getline(file, line))
 	{
@@ -78,8 +79,14 @@ void BitcoinExchange::_convertValue()
 			std::cerr << "Error: Bad Input" << std::endl;
 		else
 		{
-			date = line.substr(0, line.find('|'));
-			svalue = line.substr(line.find('|') + 2);
+			pipe_index = line.find('|');
+			date = line.substr(0, pipe_index);
+			if (!line[pipe_index + 1] || !line[pipe_index + 2] || line[pipe_index + 1] != ' ')
+			{
+				std::cerr << "Error: Invalid value format" << std::endl;
+				continue;
+			}
+			svalue = line.substr(pipe_index + 2);
 			fvalue = std::atof(svalue.c_str());
 			if (!isValidDate(date))
 				std::cerr << "Error: Invalid date format" << std::endl;
