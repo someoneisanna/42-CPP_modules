@@ -16,6 +16,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cstring>
+#include <sstream>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <map>
@@ -25,9 +27,10 @@ class BitcoinExchange
 	private:
 		std::string						_filename;
 		std::map<std::string, float>	_database;
+		std::string						_date;
 
-		void	_readDatabase();
-		void	_convertValue();
+		int		_readDatabase();
+		int		_convertValue();
 		float	_searchDatabase(std::string date);
 
 	public:
@@ -37,9 +40,10 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		BitcoinExchange &operator=(const BitcoinExchange &src);
+
+		bool	isValidDate(std::string date);
+		bool	isValidValue(std::string s, float f);
 };
 
-bool	isValidDate(std::string date);
-bool	isValidValue(std::string s, float f);
 
 #endif

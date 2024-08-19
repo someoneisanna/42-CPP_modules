@@ -37,7 +37,7 @@ class PmergeMe
 		std::vector<int>	_l;
 		std::deque<int>		_d;
 
-		void	_fillContainers(char **av);
+		int		_fillContainers(char **av);
 		void	_sortContainers();
 		clock_t	_sortVector(std::vector<int> &l);
 		clock_t	_sortDeque(std::deque<int> &d);

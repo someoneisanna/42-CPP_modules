@@ -20,6 +20,4 @@ int main(int ac, char **av)
 		return (1);
 	}
 	RPN rpn(av[1]);
-	//RPN rpn1 = rpn;
-	//RPN rpn2(rpn1);
 }

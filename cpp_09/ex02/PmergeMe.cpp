@@ -18,7 +18,8 @@ PmergeMe::PmergeMe(void) {}
 
 PmergeMe::PmergeMe(char **av) : _l(), _d()
 {
-	_fillContainers(av);
+	if (_fillContainers(av) == 1)
+		return;
 	_sortContainers();
 }
 
@@ -38,7 +39,7 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &src)
 
 // Member Functions ----------------------------------------------------------------
 
-void PmergeMe::_fillContainers(char **av)
+int PmergeMe::_fillContainers(char **av)
 {
 	for (int i = 1; av[i]; i++)
 	{
@@ -46,13 +47,16 @@ void PmergeMe::_fillContainers(char **av)
 		{
 			if (!isdigit(av[i][j]))
 			{
-				std::cerr << "Error: Invalid input." << std::endl;
-				exit(1);
+				std::cerr << "Error: Invalid input" << std::endl;
+				_l.clear();
+				_d.clear();
+				return (1);
 			}
 		}
 		_l.push_back(atoi(av[i]));
 		_d.push_back(atoi(av[i]));
 	}
+	return (0);
 }
 
 void PmergeMe::_sortContainers()
